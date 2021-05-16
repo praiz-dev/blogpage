@@ -1,0 +1,226 @@
+/* CSS Variables */
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+
+*{
+    margin: 0;
+}
+
+html, 
+body {
+   height: 100%;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+
+body {
+    background-color: #fff;
+    margin: 30px 50px;
+    line-height: 1.4;;
+}
+
+button {
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+
+.author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    width: 100%;
+    /* border: solid 2px #456; */
+}
+
+/* Navigation */
+.main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    /* border: solid 2px #567; */
+}
+
+.main-nav a {
+    background: var(--primary);
+    display: block;
+    padding: 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+}
+
+/* Top Container */
+.top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+    'showcase showcase top-box'
+    'showcase showcase top-box'
+    'showcase showcase top-box'
+    ;
+}
+
+/* Showcase */
+.showcase {
+    grid-area: showcase;
+    min-height: 80%;
+    background: url(showcase2.jpg);
+    /* Photo by Designecologist from Pexels */
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+}
+
+.showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--light);
+}
+
+.showcase p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--light);
+}
+
+
+
+.top-box {
+    grid-area: top-box;
+    min-height: 80%;
+    /* grid-template-rows: repeat(3, 1fr); */
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    width: 300px;
+    border-radius: 10px;    
+}
+
+.card-header img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    min-height: 45%;
+  }
+
+  .tag {
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0;
+    padding: 2px 10px;
+    text-transform: uppercase;
+  }
+
+  .card-body h4 {
+    margin: 10px 0;
+  }
+  .card-body p {
+    font-size: 14px;
+    margin: 0 0 40px 0;
+    font-weight: 500;
+    color: rgb(70, 68, 68);
+  }
+
+  .author {
+    display: flex;
+    margin-top: 1.4rem;
+  }
+
+  /* Footer */
+  footer {
+      margin-top: 2rem;
+      background: var(--dark);
+      color: var(--light);
+      text-align: center;
+      /* padding: 0.1rem; */
+  }
+
+
+  .author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+
+
+  .author-info h5 {
+    margin: 0;
+  }
+
+
+  .author-info small {
+    color: #888785;
+  }
+
+
+  /* Media Queries */
+@media(max-width: 700px) {
+    .top-container {
+        grid-template-areas: 
+        'showcase showcase'
+        'top-box top-box';
+    }
+
+    .showcase h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-nav ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+    .top-container {
+        grid-template-areas: 
+        'showcase' 
+        'top-box' ;
+    }
+}
